@@ -1,3 +1,6 @@
+import playlistlyImage from "@/playlistly.png";
+import playlixImage from "@/playlix.png";
+
 export const site = {
   name: "Angel",
   title: "angel.dev",
@@ -43,6 +46,7 @@ export const site = {
       year: "2026",
       language: "TypeScript",
       color: "#ff6b35",
+      image: playlixImage,
       source: "https://github.com/Arturo-Gallardo/Playlix",
       website: "https://playlix-grid.vercel.app/",
     },
@@ -54,6 +58,7 @@ export const site = {
       year: "2026",
       language: "TypeScript",
       color: "#75fa69",
+      image: playlistlyImage,
       source: "https://github.com/Arturo-Gallardo/Playlistly",
       website: "https://playlistly.vercel.app/",
     },

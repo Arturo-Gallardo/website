@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { LiveAge } from "@/components/live-age";
 import { site } from "@/data/site";
 
@@ -46,16 +47,19 @@ function ToolGroup({
 
 function ProjectCard({
   project,
-  index,
 }: {
   project: (typeof site.projects)[number];
-  index: number;
 }) {
   return (
     <article className="project-card">
       <span className="year">{project.year}</span>
-      <div className={`project-image project-image-${index + 1}`}>
-        <span>{project.name.slice(0, 2).toUpperCase()}</span>
+      <div className="project-image">
+        <Image
+          src={project.image}
+          alt={`${project.name} preview`}
+          fill
+          sizes="(max-width: 640px) 100vw, 400px"
+        />
       </div>
       <div className="project-content">
         <h2 title={project.name}>{project.name}</h2>
@@ -123,8 +127,8 @@ export function HomeMainContent() {
       </div>
 
       <div className="projects">
-        {site.projects.map((project, index) => (
-          <ProjectCard project={project} index={index} key={project.id} />
+        {site.projects.map((project) => (
+          <ProjectCard project={project} key={project.id} />
         ))}
       </div>
     </>

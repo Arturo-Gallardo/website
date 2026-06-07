@@ -20,7 +20,9 @@ export function MainColumnContent({ home, activity }: MainColumnContentProps) {
         onSelect={selectTab}
       />
 
-      <main className="main-views">
+      <main
+        className={`main-views ${isTransitioning ? "is-transitioning" : ""}`}
+      >
         <div
           className={`main-views-track ${tab === "activity" ? "is-activity" : ""}`}
         >
