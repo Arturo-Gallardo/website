@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ExternalLink } from "@/components/external-link";
 import { LiveAge } from "@/components/live-age";
 import { site } from "@/data/site";
 
@@ -75,13 +76,13 @@ function ProjectCard({
         <div
           className={`project-actions ${"website" in project ? "" : "single"}`}
         >
-          <a href={project.source}>
+          <ExternalLink href={project.source}>
             <span>◉</span> Source
-          </a>
+          </ExternalLink>
           {"website" in project ? (
-            <a className="primary" href={project.website}>
+            <ExternalLink className="primary" href={project.website}>
               <span>◎</span> Website
-            </a>
+            </ExternalLink>
           ) : null}
         </div>
       </div>

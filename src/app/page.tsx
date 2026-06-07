@@ -4,6 +4,7 @@ import { AsciiHeader } from "@/components/ascii-header";
 import { HomeMainContent } from "@/components/home-main-content";
 import { LocalClock } from "@/components/local-clock";
 import { MainColumnContent } from "@/components/main-column-content";
+import { ExternalLink } from "@/components/external-link";
 import { SocialIcon } from "@/components/social-icon";
 import { ThemeButton } from "@/components/theme-button";
 import { site } from "@/data/site";
@@ -53,13 +54,13 @@ export default function Home() {
             <ul className="socials">
               {site.socials.map((social) => (
                 <li key={social.label}>
-                  <a
+                  <ExternalLink
                     href={social.href}
                     aria-label={social.label}
                     title={social.label}
                   >
                     <SocialIcon name={social.icon} />
-                  </a>
+                  </ExternalLink>
                 </li>
               ))}
             </ul>
@@ -89,7 +90,7 @@ export default function Home() {
           />
 
           <footer id="contact">
-            <a href={`mailto:${site.email}`}>{site.email}</a>
+            <ExternalLink href={`mailto:${site.email}`}>{site.email}</ExternalLink>
             <span className="mono">{site.title}</span>
           </footer>
         </div>
